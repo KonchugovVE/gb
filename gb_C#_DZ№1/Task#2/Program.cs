@@ -1,18 +1,33 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿//Задача 2: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
+//2, 3, 7 -> 7
+//44 5 78 -> 78
+//22 3 9 -> 22
 int i = 0;
-Console.Write("Введите колличество эемепнтов массива: ");
 
-int elCount = int.Parse(Console.ReadLine());
+int max = 0;
+
+Console.Write("Введите колличество эемепнтов : ");
+
+int elCount = int.Parse(Console.ReadLine());            // Вводим с клавиатуры колличество элементов в массиве
 
 int[] myArray = new int[elCount];
 
-for (i = 0; i < myArray.Length; i++)
+for (i = 0; i < myArray.Length; i++)                    // Запускаем цикл , что бы присвоить значение путем ввода с клавиатуры, каждой ячейки массива
 {
-    Console.Write($"Введите значение массива под индексом {i}: ");
+    Console.Write($"Введите значение {i} элемента: ");
     myArray[i] = int.Parse(Console.ReadLine());
 }
 
-Console.WriteLine("ввывод массива:");
+for (i = 0; i < myArray.Length; i++)                   // Запускаем цикл , что бы сравнить мах с каждой ячейкой массива и  если она больше мах, то заменяем значение мах на нее
+{
+    if (myArray[i] > max )
+    {
+        max = myArray[i];
+    }
+}
 
-for (i = 0; i < myArray.Length; i++)
-{ Console.Write(myArray[i]); }
+Console.Write("Из введенных цифр:");                 
+
+for (i = 0; i < myArray.Length; i++)                 //Запускаем цикл перебора и выводим на экран значение каждой ячейки массива
+{ Console.Write($" {myArray[i]}\t"); }
+System.Console.Write($"Наибольшая = {max}");
