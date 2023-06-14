@@ -5,9 +5,9 @@
 
 System.Console.Write("Введите число: ");
 int addnum = Convert.ToInt32(Console.ReadLine());
-int num = addnum % 2;
+
 System.Console.Write($"\nЧисло является ");
-if (num == 0)
+if (addnum % 2 == 0)
 {
     System.Console.WriteLine("четным");
 }
